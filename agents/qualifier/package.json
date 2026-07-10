@@ -1,0 +1,10 @@
+{
+  "name": "founder-os-qualifier",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Agent Qualifier du Founder OS (Web Studio OS) — qualifie une demande entrante via l'API Anthropic.",
+  "scripts": {
+    "start": "node --env-file=../../.env qualifier.mjs"
+  }
+}
