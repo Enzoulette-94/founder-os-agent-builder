@@ -20,6 +20,7 @@ docs/agent-roles.md            Fiche détaillée de chaque agent
 docs/permissions-policy.md     Politique de permissions par action sensible
 docs/provider-choice.md        Justification du choix de plateforme (mixte)
 docs/run-journal.md            Journal de réflexion (jour 1)
+docs/demandes-types.md         3 demandes types à traiter en fin de semaine
 evidence/screenshots/          Captures d'écran probantes (à venir)
 evidence/runs/                 Traces d'exécution probantes (à venir)
 exports/                       Exports générés par le système (à venir)
