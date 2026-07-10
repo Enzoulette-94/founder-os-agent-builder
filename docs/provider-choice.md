@@ -45,6 +45,37 @@ tâches déléguées aux agents (rédaction, analyse, synthèse) ne sont pas
 sensibles au temps réel — contrairement à la consultation directe du vault
 par le fondateur, qui reste locale et instantanée.
 
+## Agent Qualifier — application concrète du choix
+
+Le premier agent fonctionnel du Founder OS, **Founder OS Qualifier** (voir
+[docs/first-agent-config.md](first-agent-config.md)), applique directement ce
+choix de plateforme : c'est un script Node qui appelle l'API Anthropic
+(`claude-sonnet-5`) en cloud, sans mémoire locale pour l'instant (pas encore
+connecté au vault Obsidian).
+
+### Données envoyées au cloud
+
+Seul le **texte de la demande** transmis en argument (ex. : la description
+d'un besoin client reformulée par le fondateur) est envoyé à l'API
+Anthropic, avec le prompt système de l'agent. Aucune donnée personnelle du
+client au-delà de ce que le fondateur choisit d'inclure dans cette demande
+n'est transmise — pas d'accès automatique au vault, pas de champ caché.
+
+### Coût potentiel
+
+Le coût d'un appel se calcule comme `tokens consommés × tarif par token`,
+séparément pour les tokens d'entrée (`input_tokens`) et de sortie
+(`output_tokens`), tous deux retournés par l'API et loggés par le script.
+
+Lors du run réel du 2026-07-10 (voir
+[evidence/runs/day-1-first-agent.md](../evidence/runs/day-1-first-agent.md)) :
+`input_tokens = 708`, `output_tokens = 335`.
+
+Le tarif exact par token pour `claude-sonnet-5` **n'a pas été vérifié** au
+moment de la rédaction de ce document — **à vérifier sur la doc Anthropic**
+(page tarification officielle) avant toute estimation de coût chiffrée. Ne
+pas déduire de prix par run tant que ce tarif n'est pas confirmé.
+
 ## Statut du choix
 
 Ce choix de plateforme est **provisoire et non bloquant**. Il pourra être
